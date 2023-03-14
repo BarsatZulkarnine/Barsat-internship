@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
-        <div id="top"></div>
+        <div id="top"></div> 
         <Landing />
         <LandingIntro />
         <HotCollections />
