@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-function CountDownClock({ data }) {
+function CountDownClock({ data}) {
   const [expiryTime, setExpirayTime] = useState("");
-  console.log(data)
   let requestID;
   useEffect(() => {
     requestID = requestAnimationFrame(countdown);
@@ -11,16 +10,16 @@ function CountDownClock({ data }) {
 
   function countdown() {
     let currentTime = Date.now();
-    let timeLeft = data.expiryDate - currentTime;
+    let timeLeft = data - currentTime;
     let secondsLeftText = Math.floor((timeLeft / 1000) % 60);
     let minutesLeftText = Math.floor((secondsLeftText / 60) % 60);
     let hoursLeftText = Math.floor(minutesLeftText / 60);
 
-    if (timeLeft < 0) {
+    if (timeLeft <= 0) {
       return setExpirayTime("Expired");
     }
 
-    if (secondsLeftText.toString().length === 1) {
+    else if (secondsLeftText.toString().length === 1) {
       secondsLeftText = "0" + secondsLeftText;
     }
     if (minutesLeftText.toString().length === 1) {
