@@ -48,7 +48,7 @@ const NewItems = () => {
             </div>
           </div>
           <OwlCarousel className="owl.theme" {...options}>
-            {!loading
+            {loading
               ? items.map((data, index) => (
                   <div className="" key={index}>
                     <div className="nft__item">
